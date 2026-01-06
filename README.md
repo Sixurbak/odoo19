@@ -6,3 +6,5 @@ chmod +x setup.sh
 
 ./setup.sh
 
+# Alterar URL do docker-compose.yml
+
