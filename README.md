@@ -1,4 +1,4 @@
-# Lembrar de alterar o arquivo para executavel
+# Lembrar de alterar o arquivo para executavel apos -git clone url
 ```bash
 chmod +x setup.sh
 ```
@@ -14,4 +14,15 @@ sudo ./setup.sh
 docker network create odoo_net
 ```
 
+# Docker compose up
+
+```bash
+docker compose -f ./docker-compose.yml up -d
+```
+
+# Docker compose down
+
+```bash
+docker compose -f ./docker-compose.yml down
+```
 
