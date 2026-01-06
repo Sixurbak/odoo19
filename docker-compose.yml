@@ -22,11 +22,13 @@ services:
     image: sixurbak/odoo19
     networks:
       - odoo_net
+    ports:
+      - "80:8069"
     environment:
       HOST: postgresql
       USER: odoo
       PASSWORD: odoo
-      DOMAIN: URL_ADDRESS
+      DOMAIN: web.deciocarrilho.online
     volumes:
       - ./odoo_data:/var/lib/odoo
       - ./extra-addons:/mnt/extra-addons
