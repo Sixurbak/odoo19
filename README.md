@@ -8,3 +8,7 @@ sudo ./setup.sh
 
 # Alterar URL do docker-compose.yml
 
+# Criar Network
+
+docker network create odoo_net
+
