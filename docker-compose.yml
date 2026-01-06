@@ -1,0 +1,34 @@
+networks:
+  odoo_net:
+    external: true
+
+volumes:
+  postgres_data:
+    driver: local
+
+services:
+  postgresql:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+    networks:
+      - odoo_net
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      
+odoo19:
+  image: sixurbak/odoo19
+  networks:
+    - odoo_net
+  environment:
+    HOST: postgresql
+    USER: odoo
+    PASSWORD: odoo
+    DOMAIN: odoo.deciocarrilho.online
+  volumes:
+    - ./odoo_data:/var/lib/odoo
+    - ./extra-addons:/mnt/extra-addons
+    - ./custom-addons:/mnt/custom-addons
+    - ./odoo.conf:/etc/odoo/odoo.conf
