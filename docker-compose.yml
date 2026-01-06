@@ -18,17 +18,17 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
       
-odoo19:
-  image: sixurbak/odoo19
-  networks:
-    - odoo_net
-  environment:
-    HOST: postgresql
-    USER: odoo
-    PASSWORD: odoo
-    DOMAIN: URL_ADDRESS
-  volumes:
-    - ./odoo_data:/var/lib/odoo
-    - ./extra-addons:/mnt/extra-addons
-    - ./custom-addons:/mnt/custom-addons
-    - ./odoo.conf:/etc/odoo/odoo.conf
+  odoo19:
+    image: sixurbak/odoo19
+    networks:
+      - odoo_net
+    environment:
+      HOST: postgresql
+      USER: odoo
+      PASSWORD: odoo
+      DOMAIN: URL_ADDRESS
+    volumes:
+      - ./odoo_data:/var/lib/odoo
+      - ./extra-addons:/mnt/extra-addons
+      - ./custom-addons:/mnt/custom-addons
+      - ./odoo.conf:/etc/odoo/odoo.conf
