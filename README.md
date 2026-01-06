@@ -1,7 +1,13 @@
 # Lembrar de alterar o arquivo para executavel apos -git clone url
+
+```bash 
+git clone https://github.com/Sixurbak/odoo19.git
+```
+
 ```bash
 chmod +x setup.sh
 ```
+
 # Executar o script
 ```bash
 sudo ./setup.sh
