@@ -1,6 +1,6 @@
 networks:
   odoo_net:
-    external: true
+    driver: bridge
 
 volumes:
   postgres_data:
@@ -17,13 +17,13 @@ services:
       - odoo_net
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      
+
   odoo19:
     image: sixurbak/odoo19
     networks:
       - odoo_net
     ports:
-      - "80:8069"
+      - "8069:8069"
     environment:
       HOST: postgresql
       USER: odoo
